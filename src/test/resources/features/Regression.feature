@@ -1,4 +1,6 @@
 Feature: Test Feature
+
+  @First
   Scenario: Login Test Scenario
     Given User is ready with test data
     When User launch the browser

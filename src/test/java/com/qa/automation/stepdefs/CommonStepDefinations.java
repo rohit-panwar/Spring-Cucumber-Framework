@@ -1,11 +1,14 @@
 package com.qa.automation.stepdefs;
 
+import com.qa.automation.helpers.BaseSetup;
 import com.qa.automation.helpers.CommonObject;
 import com.qa.automation.helpers.SeleniumWebDriver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static com.qa.automation.helpers.BaseSetup.properties;
 
 public class CommonStepDefinations {
 
@@ -23,7 +26,10 @@ public class CommonStepDefinations {
 
     @Given("I navigate to login page")
     public void i_navigate_to_login_page() {
-        baseObject.driver.get("https://practicetestautomation.com/practice-test-login/");
+        //baseObject.driver.get("https://practicetestautomation.com/practice-test-login/");
+        System.out.println("URL :: will launch");
+        System.out.println("URL :: "+properties.getProp("WebURL"));
+        baseObject.driver.get(properties.getProp("WebURL"));
     }
 
     @When("I complete the login process")
